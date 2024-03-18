@@ -45,43 +45,15 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
         try{
                                    
             ColaboradorVO cVO = new ColaboradorVO();
-            boolean cltSim = jRCLTSim.isSelected();
-            boolean cltNao = jRCLTNao.isSelected();
-            boolean pontoSim = jRPontoSim.isSelected();
-            boolean pontoNao = jRPontoNao.isSelected();
-            boolean ativoSim = jRAtivoSim.isSelected();
-            boolean ativoNao = jRAtivoNao.isSelected();
-            boolean apartamento = jRApartamento.isSelected();
-            boolean casa = jRCasa.isSelected();
-            
-            if (cltSim){
-                cVO.setClt(cltSim);
-            } else {
-                cVO.setClt(cltNao);
-            }
-            
-            if (pontoSim){
-                cVO.setPonto(pontoSim);
-            } else {
-                cVO.setPonto(pontoNao);
-            }
-            
-            if(ativoSim){
-                cVO.setAtivo(ativoSim);
-            } else {
-                cVO.setAtivo(ativoNao);
-            }
-            
-            if(apartamento){
-                cVO.setApartamento(apartamento);
-            } else {
-                cVO.setApartamento(casa);
-            }
-            
+                       
+            cVO.setClt((String) jcbCLT.getSelectedItem());
+            cVO.setPonto((String) jcbPonto.getSelectedItem());
+            cVO.setAtivo((String) jcbAtivo.getSelectedItem());
+            cVO.setTipoMoradia((String) jcbMoradia.getSelectedItem());
             cVO.setPrimeiroNome(jTPNome.getText());
             cVO.setSobrenome(jTSNome.getText());
             cVO.setCpf(jTCPF.getText());
-            cVO.setSalario(Double.parseDouble(jTSalario.getText()));
+            cVO.setSalario(jTSalario.getText());
             cVO.setCep(jTCEP.getText());
             cVO.setBairro(jTBairro.getText());
             cVO.setRua(jTRua.getText());
@@ -120,27 +92,18 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jRCLTSim = new javax.swing.JRadioButton();
-        jRCLTNao = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
-        jRPontoNao = new javax.swing.JRadioButton();
-        jRPontoSim = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jTPNome = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTSNome = new javax.swing.JTextField();
-        jTCPF = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTSalario = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jRAtivoNao = new javax.swing.JRadioButton();
-        jRAtivoSim = new javax.swing.JRadioButton();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jTCEP = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jTBairro = new javax.swing.JTextField();
         jTRua = new javax.swing.JTextField();
@@ -149,11 +112,17 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
         jLabel13 = new javax.swing.JLabel();
         jTNumero = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jRCasa = new javax.swing.JRadioButton();
-        jRApartamento = new javax.swing.JRadioButton();
         jPanel4 = new javax.swing.JPanel();
-        jButtonCadastrar = new javax.swing.JButton();
+        jcbPonto = new javax.swing.JComboBox<>();
+        jcbCLT = new javax.swing.JComboBox<>();
+        jcbAtivo = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        jcbMoradia = new javax.swing.JComboBox<>();
         jButtonCancelar = new javax.swing.JButton();
+        jButtonCadastrar = new javax.swing.JButton();
+        jTCEP = new javax.swing.JFormattedTextField();
+        jTSalario = new javax.swing.JFormattedTextField();
+        jTCPF = new javax.swing.JFormattedTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -166,40 +135,8 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel2.setText("É CLT?");
 
-        buttonGroup1.add(jRCLTSim);
-        jRCLTSim.setText("Sim");
-        jRCLTSim.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRCLTSimActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(jRCLTNao);
-        jRCLTNao.setText("Não");
-        jRCLTNao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRCLTNaoActionPerformed(evt);
-            }
-        });
-
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel3.setText("Registra Ponto?");
-
-        buttonGroup2.add(jRPontoNao);
-        jRPontoNao.setText("Não");
-        jRPontoNao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRPontoNaoActionPerformed(evt);
-            }
-        });
-
-        buttonGroup2.add(jRPontoSim);
-        jRPontoSim.setText("Sim");
-        jRPontoSim.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRPontoSimActionPerformed(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel4.setText("Primeiro Nome*");
@@ -219,42 +156,14 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
             }
         });
 
-        jTCPF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTCPFActionPerformed(evt);
-            }
-        });
-
         jLabel6.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel6.setText("Salário*");
 
         jLabel7.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel7.setText("CPF*");
 
-        jTSalario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTSalarioActionPerformed(evt);
-            }
-        });
-
         jLabel8.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel8.setText("Ativo?");
-
-        buttonGroup3.add(jRAtivoNao);
-        jRAtivoNao.setText("Não");
-        jRAtivoNao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRAtivoNaoActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(jRAtivoSim);
-        jRAtivoSim.setText("Sim");
-        jRAtivoSim.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRAtivoSimActionPerformed(evt);
-            }
-        });
 
         jLabel9.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel9.setText("Dados");
@@ -311,12 +220,6 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jTCEP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTCEPActionPerformed(evt);
-            }
-        });
-
         jLabel10.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel10.setText("Bairro*");
 
@@ -350,22 +253,6 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
         jLabel14.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel14.setText("CEP*");
 
-        buttonGroup4.add(jRCasa);
-        jRCasa.setText("Casa");
-        jRCasa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRCasaActionPerformed(evt);
-            }
-        });
-
-        buttonGroup4.add(jRApartamento);
-        jRApartamento.setText("Apartamento");
-        jRApartamento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRApartamentoActionPerformed(evt);
-            }
-        });
-
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -379,12 +266,16 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jButtonCadastrar.setText("Cadastrar");
-        jButtonCadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCadastrarActionPerformed(evt);
-            }
-        });
+        jcbPonto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
+
+        jcbCLT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
+
+        jcbAtivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
+
+        jLabel15.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel15.setText("Tipo Moradia");
+
+        jcbMoradia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casa", "Apartamento" }));
 
         jButtonCancelar.setText("Cancelar");
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -392,6 +283,31 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
                 jButtonCancelarActionPerformed(evt);
             }
         });
+
+        jButtonCadastrar.setText("Cadastrar");
+        jButtonCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastrarActionPerformed(evt);
+            }
+        });
+
+        try {
+            jTCEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            jTSalario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("R$####.##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            jTCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -404,33 +320,24 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRCLTSim)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRCLTNao))
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel2)
+                            .addComponent(jcbCLT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(92, 92, 92)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jcbPonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 70, 70)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRPontoSim)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRPontoNao))
-                            .addComponent(jLabel3))
-                        .addGap(70, 70, 70)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRAtivoSim)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRAtivoNao))))
+                            .addComponent(jcbAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)))
                     .addComponent(jLabel9)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel14)
                                 .addComponent(jLabel13)
-                                .addComponent(jTCEP, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                                .addComponent(jTRua))
+                                .addComponent(jTRua, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel12)
@@ -439,29 +346,34 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
                                 .addComponent(jTNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTCPF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTPNome, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGap(101, 101, 101)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel5)
-                                .addComponent(jTSNome)
-                                .addComponent(jTSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel7)
+                                .addComponent(jTPNome, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                                .addComponent(jTCPF))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(101, 101, 101)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jTSalario)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jTSNome, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jRCasa)
-                                .addComponent(jRApartamento))
+                                .addComponent(jcbMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel15))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jButtonCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButtonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(44, 44, 44)))
+                            .addGap(69, 69, 69)))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -473,30 +385,22 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRCLTSim)
-                            .addComponent(jRCLTNao)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRAtivoSim)
-                            .addComponent(jRAtivoNao)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRPontoSim)
-                            .addComponent(jRPontoNao))))
-                .addGap(44, 44, 44)
+                        .addComponent(jcbCLT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jcbPonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jcbAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(47, 47, 47)
                 .addComponent(jLabel9)
                 .addGap(3, 3, 3)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTPNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -506,43 +410,48 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23)
                         .addComponent(jLabel11)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(jButtonCadastrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButtonCancelar))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel15)
+                                        .addGap(32, 32, 32))
+                                    .addComponent(jcbMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTSNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(176, 176, 176)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonCadastrar)
-                    .addComponent(jRCasa))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRApartamento)
-                    .addComponent(jButtonCancelar)))
+                        .addComponent(jTSNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -550,13 +459,12 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
@@ -565,30 +473,6 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRCLTSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRCLTSimActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRCLTSimActionPerformed
-
-    private void jRCLTNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRCLTNaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRCLTNaoActionPerformed
-
-    private void jRPontoSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRPontoSimActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRPontoSimActionPerformed
-
-    private void jRPontoNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRPontoNaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRPontoNaoActionPerformed
-
-    private void jRAtivoSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRAtivoSimActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRAtivoSimActionPerformed
-
-    private void jRAtivoNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRAtivoNaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRAtivoNaoActionPerformed
-
     private void jTPNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTPNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTPNomeActionPerformed
@@ -596,18 +480,6 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
     private void jTSNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTSNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTSNomeActionPerformed
-
-    private void jTCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTCPFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTCPFActionPerformed
-
-    private void jTSalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTSalarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTSalarioActionPerformed
-
-    private void jTCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTCEPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTCEPActionPerformed
 
     private void jTBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBairroActionPerformed
         // TODO add your handling code here:
@@ -620,14 +492,6 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
     private void jTNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNumeroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTNumeroActionPerformed
-
-    private void jRCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRCasaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRCasaActionPerformed
-
-    private void jRApartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRApartamentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRApartamentoActionPerformed
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
         cadastrar();
@@ -652,6 +516,7 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -665,22 +530,18 @@ public class GUICadColaborador extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JRadioButton jRApartamento;
-    private javax.swing.JRadioButton jRAtivoNao;
-    private javax.swing.JRadioButton jRAtivoSim;
-    private javax.swing.JRadioButton jRCLTNao;
-    private javax.swing.JRadioButton jRCLTSim;
-    private javax.swing.JRadioButton jRCasa;
-    private javax.swing.JRadioButton jRPontoNao;
-    private javax.swing.JRadioButton jRPontoSim;
     private javax.swing.JTextField jTBairro;
-    private javax.swing.JTextField jTCEP;
-    private javax.swing.JTextField jTCPF;
+    private javax.swing.JFormattedTextField jTCEP;
+    private javax.swing.JFormattedTextField jTCPF;
     private javax.swing.JTextField jTNumero;
     private javax.swing.JTextField jTPNome;
     private javax.swing.JTextField jTRua;
     private javax.swing.JTextField jTSNome;
-    private javax.swing.JTextField jTSalario;
+    private javax.swing.JFormattedTextField jTSalario;
+    private javax.swing.JComboBox<String> jcbAtivo;
+    private javax.swing.JComboBox<String> jcbCLT;
+    private javax.swing.JComboBox<String> jcbMoradia;
+    private javax.swing.JComboBox<String> jcbPonto;
     // End of variables declaration//GEN-END:variables
 
     

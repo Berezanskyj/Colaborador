@@ -11,20 +11,19 @@ package modelo;
 public class ColaboradorVO {
     
     private long idColaborador;
-    private boolean clt;
-    private boolean ponto;
-    private boolean ativo;
-    private boolean casa;
-    private boolean apartamento;
+    private String clt;
+    private String ponto;
+    private String ativo;
+    private String tipoMoradia;
     private String primeiroNome;
     private String sobrenome;
     private String cpf;
-    private double salario;
+    private String salario;
     private String cep;
     private String bairro;
     private String rua;
     private String numeroRua;
-    
+
     public long getIdColaborador() {
         return idColaborador;
     }
@@ -33,52 +32,44 @@ public class ColaboradorVO {
         this.idColaborador = idColaborador;
     }
 
-    public boolean isClt() {
+    public String getClt() {
         return clt;
     }
 
-    public void setClt(boolean clt) {
+    public void setClt(String clt) {
         this.clt = clt;
     }
 
-    public boolean isPonto() {
+    public String getPonto() {
         return ponto;
     }
 
-    public void setPonto(boolean ponto) {
+    public void setPonto(String ponto) {
         this.ponto = ponto;
     }
 
-    public boolean isAtivo() {
+    public String getAtivo() {
         return ativo;
     }
 
-    public void setAtivo(boolean ativo) {
+    public void setAtivo(String ativo) {
         this.ativo = ativo;
     }
 
-    public boolean isCasa() {
-        return casa;
+    public String getTipoMoradia() {
+        return tipoMoradia;
     }
 
-    public void setCasa(boolean casa) {
-        this.casa = casa;
-    }
-
-    public boolean isApartamento() {
-        return apartamento;
-    }
-
-    public void setApartamento(boolean apartamento) {
-        this.apartamento = apartamento;
+    public void setTipoMoradia(String tipoMoradia) {
+        this.tipoMoradia = tipoMoradia;
     }
 
     public String getPrimeiroNome() {
         return primeiroNome;
     }
 
-    public void setPrimeiroNome(String primerioNome) {
-        this.primeiroNome = primerioNome;
+    public void setPrimeiroNome(String primeiroNome) {
+        this.primeiroNome = primeiroNome;
     }
 
     public String getSobrenome() {
@@ -97,11 +88,11 @@ public class ColaboradorVO {
         this.cpf = cpf;
     }
 
-    public double getSalario() {
+    public String getSalario() {
         return salario;
     }
 
-    public void setSalario(Double salario) {
+    public void setSalario(String salario) {
         this.salario = salario;
     }
 
@@ -136,6 +127,8 @@ public class ColaboradorVO {
     public void setNumeroRua(String numeroRua) {
         this.numeroRua = numeroRua;
     }
+    
+    
     
     
 }

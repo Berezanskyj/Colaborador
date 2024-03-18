@@ -22,22 +22,21 @@ public class ColaboradorDAO {
         Connection con = new ConexaoBanco().getConexao();
         
         try{
-            String sql = "INSERT INTO colaborador VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO colaborador VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             
             PreparedStatement pstm = con.prepareStatement(sql);
-            pstm.setBoolean(1, cVO.isClt());
-            pstm.setBoolean(2, cVO.isPonto());
-            pstm.setBoolean(3, cVO.isAtivo());
-            pstm.setBoolean(4, cVO.isCasa());
-            pstm.setBoolean(5, cVO.isApartamento());
-            pstm.setString(6, cVO.getPrimeiroNome());
-            pstm.setString(7, cVO.getSobrenome());
-            pstm.setString(8, cVO.getCpf());
-            pstm.setDouble(9, cVO.getSalario());
-            pstm.setString(10, cVO.getCep());
-            pstm.setString(11, cVO.getBairro());
-            pstm.setString(12, cVO.getRua());
-            pstm.setString(13, cVO.getNumeroRua());
+            pstm.setString(1, cVO.getClt());
+            pstm.setString(2, cVO.getPonto());
+            pstm.setString(3, cVO.getAtivo());
+            pstm.setString(4, cVO.getTipoMoradia());
+            pstm.setString(5, cVO.getPrimeiroNome());
+            pstm.setString(6, cVO.getSobrenome());
+            pstm.setString(7, cVO.getCpf());
+            pstm.setString(8, cVO.getSalario());
+            pstm.setString(9, cVO.getCep());
+            pstm.setString(10, cVO.getBairro());
+            pstm.setString(11, cVO.getRua());
+            pstm.setString(12, cVO.getNumeroRua());
             
             pstm.execute();
             pstm.close();
@@ -67,15 +66,14 @@ public class ColaboradorDAO {
                 ColaboradorVO cVO = new ColaboradorVO();
                 
                 cVO.setIdColaborador(rs.getLong("idcolaborador"));
-                cVO.setClt(rs.getBoolean("clt"));
-                cVO.setPonto(rs.getBoolean("ponto"));
-                cVO.setAtivo(rs.getBoolean("ativo"));
-                cVO.setCasa(rs.getBoolean("casa"));
-                cVO.setApartamento(rs.getBoolean("apartamento"));
+                cVO.setClt(rs.getString("clt"));
+                cVO.setPonto(rs.getString("ponto"));
+                cVO.setAtivo(rs.getString("ativo"));
+                cVO.setTipoMoradia(rs.getString("tipoMoradia"));
                 cVO.setPrimeiroNome(rs.getString("primeiroNome"));
                 cVO.setSobrenome(rs.getString("sobrenome"));
                 cVO.setCpf(rs.getString("cpf"));
-                cVO.setSalario(rs.getDouble("salario"));
+                cVO.setSalario(rs.getString("salario"));
                 cVO.setCep(rs.getString("cep"));
                 cVO.setBairro(rs.getString("Bairro"));
                 cVO.setRua(rs.getString("rua"));
@@ -107,16 +105,15 @@ public class ColaboradorDAO {
             while (rs.next()){
                 ColaboradorVO cVO = new ColaboradorVO();
                 
-                cVO.setIdColaborador(rs.getLong("idcolaborador"));
-                cVO.setClt(rs.getBoolean("clt"));
-                cVO.setPonto(rs.getBoolean("ponto"));
-                cVO.setAtivo(rs.getBoolean("ativo"));
-                cVO.setCasa(rs.getBoolean("casa"));
-                cVO.setApartamento(rs.getBoolean("apartamento"));
+                 cVO.setIdColaborador(rs.getLong("idcolaborador"));
+                cVO.setClt(rs.getString("clt"));
+                cVO.setPonto(rs.getString("ponto"));
+                cVO.setAtivo(rs.getString("ativo"));
+                cVO.setTipoMoradia(rs.getString("tipoMoradia"));
                 cVO.setPrimeiroNome(rs.getString("primeiroNome"));
                 cVO.setSobrenome(rs.getString("sobrenome"));
                 cVO.setCpf(rs.getString("cpf"));
-                cVO.setSalario(rs.getDouble("salario"));
+                cVO.setSalario(rs.getString("salario"));
                 cVO.setCep(rs.getString("cep"));
                 cVO.setBairro(rs.getString("Bairro"));
                 cVO.setRua(rs.getString("rua"));
@@ -161,11 +158,10 @@ public class ColaboradorDAO {
             sql = "Update colaborador " 
                     + " set "
                     + "idcolaborador = ' " + cVO.getIdColaborador() + " ', "
-                    + "clt =  " + cVO.isClt() + " , "
-                    + "ponto =  " + cVO.isPonto() + " , "
-                    + "ativo =  " + cVO.isAtivo() + " , "
-                    + "casa =  " + cVO.isCasa() + " , "
-                    + "apartamento =  " + cVO.isApartamento() + " , "   
+                    + "clt = ' " + cVO.getClt() + "' , "
+                    + "ponto = ' " + cVO.getPonto() + "' , "
+                    + "ativo = ' " + cVO.getAtivo() + "' , "
+                    + "tipoMoradia = ' " + cVO.getTipoMoradia() + "' , "
                     + "primeiroNome = ' " + cVO.getPrimeiroNome() + " ', "
                     + "sobrenome = ' " + cVO.getSobrenome() + " ', "
                     + "cpf = ' " + cVO.getCpf() + " ', "

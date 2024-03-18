@@ -48,6 +48,7 @@ public class GUIPrincipal extends javax.swing.JFrame implements InternalFrameLis
         jmiManuProduto = new javax.swing.JMenuItem();
         jmiManuColaborador = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jmiSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Principal");
@@ -141,6 +142,20 @@ public class GUIPrincipal extends javax.swing.JFrame implements InternalFrameLis
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Sair");
+
+        jmiSair.setText("Sair");
+        jmiSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiSairActionPerformed(evt);
+            }
+        });
+        jmiSair.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jmiSairKeyPressed(evt);
+            }
+        });
+        jMenu3.add(jmiSair);
+
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
@@ -283,6 +298,16 @@ public class GUIPrincipal extends javax.swing.JFrame implements InternalFrameLis
         }
     }//GEN-LAST:event_jmiClienteKeyPressed
 
+    private void jmiSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSairActionPerformed
+       dispose();
+    }//GEN-LAST:event_jmiSairActionPerformed
+
+    private void jmiSairKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jmiSairKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+           dispose();
+        }
+    }//GEN-LAST:event_jmiSairKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -331,6 +356,7 @@ public class GUIPrincipal extends javax.swing.JFrame implements InternalFrameLis
     private javax.swing.JMenuItem jmiManuColaborador;
     private javax.swing.JMenuItem jmiManuProduto;
     private javax.swing.JMenuItem jmiProduto;
+    private javax.swing.JMenuItem jmiSair;
     // End of variables declaration//GEN-END:variables
 
     @Override

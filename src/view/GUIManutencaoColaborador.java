@@ -24,7 +24,7 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
     
     DefaultTableModel dtm = new DefaultTableModel(
                 new Object[][]{},
-            new Object[]{"ID", "CLT", "Ponto", "Ativo", "Casa", "Apartamento", "Nome", "Sobrenome", "CPF", "Salario", "CEP", "Bairro", "Rua", "Numero"}
+            new Object[]{"ID", "CLT", "Ponto", "Ativo", "Tipo Moradia", "Nome", "Sobrenome", "CPF", "Salario", "CEP", "Bairro", "Rua", "Numero"}
     );
     /**
      * Creates new form NewJInternalFrame
@@ -57,19 +57,14 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jCAtivo = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
-        jCCasa = new javax.swing.JComboBox<>();
-        jCApartamento = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
+        jcbMoradia = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jTCpf = new javax.swing.JTextField();
         jTNome = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jTSobrenome = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jTSalario = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTCep = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jTBairro = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -84,6 +79,9 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
         jBConfirmar = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jTCodigo = new javax.swing.JTextField();
+        jTCpf = new javax.swing.JFormattedTextField();
+        jTSalario = new javax.swing.JFormattedTextField();
+        jTCep = new javax.swing.JFormattedTextField();
         jPanel2 = new javax.swing.JPanel();
 
         setClosable(true);
@@ -98,11 +96,11 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "CLT", "Ponto", "Ativo", "Casa", "Apartamento", "Nome", "Sobrenome", "CPF", "Salario", "CEP", "Bairro", "Rua", "Numero"
+                "ID", "CLT", "Ponto", "Ativo", "Tipo Moradia", "Nome", "Sobrenome", "CPF", "Salario", "CEP", "Bairro", "Rua", "Numero"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -145,14 +143,9 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
         jCAtivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("Casa");
+        jLabel6.setText("Tipo Moradia");
 
-        jCCasa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
-
-        jCApartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Apartamento");
+        jcbMoradia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casa", "Apartamento" }));
 
         jLayeredPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -165,9 +158,7 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
         jLayeredPane1.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jCAtivo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jCCasa, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jCApartamento, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jcbMoradia, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -197,11 +188,7 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(jCCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jCApartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcbMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jLayeredPane1Layout.setVerticalGroup(
@@ -227,13 +214,11 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
+                            .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jCAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCApartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jcbMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
@@ -317,6 +302,24 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
         jTCodigo.setEditable(false);
         jTCodigo.setFocusable(false);
 
+        try {
+            jTCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            jTSalario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("R$ ####.##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            jTCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -325,17 +328,17 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
                 .addGap(58, 58, 58)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel9)
-                            .addComponent(jTNome, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTNome, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                             .addComponent(jLabel11)
-                            .addComponent(jTSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTSalario))
                         .addGap(59, 59, 59)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel10)
-                            .addComponent(jTSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTSobrenome, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                             .addComponent(jLabel12)
-                            .addComponent(jTCep, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTCep)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
@@ -353,12 +356,16 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTCodigo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jTCodigo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                        .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jTCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                                .addGap(91, 91, 91)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -388,14 +395,13 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
                                 .addComponent(jTSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel11)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -505,11 +511,10 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
             for (int i = 0; i < colab.size(); i++){
                 dtm.addRow(new String[] {
                     String.valueOf(colab.get(i).getIdColaborador() ),
-                    String.valueOf(colab.get(i).isClt() ),
-                    String.valueOf(colab.get(i).isPonto() ),
-                    String.valueOf(colab.get(i).isAtivo() ),
-                    String.valueOf(colab.get(i).isCasa() ),
-                    String.valueOf(colab.get(i).isApartamento() ),
+                    String.valueOf(colab.get(i).getClt() ),
+                    String.valueOf(colab.get(i).getPonto() ),
+                    String.valueOf(colab.get(i).getAtivo() ),
+                    String.valueOf(colab.get(i).getTipoMoradia() ),
                     String.valueOf(colab.get(i).getPrimeiroNome() ),
                     String.valueOf(colab.get(i).getSobrenome() ),
                     String.valueOf(colab.get(i).getCpf() ),
@@ -559,11 +564,10 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
                 for ( int i = 0; i < colab.size(); i++){
                     dtm.addRow(new String[]{
                         String.valueOf(colab.get(i).getIdColaborador() ),
-                        String.valueOf(colab.get(i).isClt() ),
-                        String.valueOf(colab.get(i).isPonto() ),
-                        String.valueOf(colab.get(i).isAtivo() ),
-                        String.valueOf(colab.get(i).isCasa() ),
-                        String.valueOf(colab.get(i).isApartamento() ),
+                        String.valueOf(colab.get(i).getClt() ),
+                        String.valueOf(colab.get(i).getPonto() ),
+                        String.valueOf(colab.get(i).getAtivo() ),
+                        String.valueOf(colab.get(i).getTipoMoradia() ),
                         String.valueOf(colab.get(i).getPrimeiroNome() ),
                         String.valueOf(colab.get(i).getSobrenome() ),
                         String.valueOf(colab.get(i).getCpf() ),
@@ -586,6 +590,21 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
     
     private void limparTabela(){
         dtm.setNumRows(0);
+        jCPesquisa.setSelectedItem(null);
+        jCClt.setSelectedItem(null);
+        jCPonto.setSelectedItem(null);
+        jCAtivo.setSelectedItem(null);
+        jcbMoradia.setSelectedItem(null);
+        jTNome.setText("");
+        jTSobrenome.setText("");
+        jTCpf.setText("");
+        jTSalario.setText("");
+        jTCep.setText("");
+        jTBairro.setText("");
+        jTRua.setText("");
+        jTNumero.setText("");
+        jTCodigo.setText("");
+                
     } // end of limpar
     
     private void deletarColaborador(){
@@ -619,16 +638,15 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
             jCClt.setSelectedItem((String) jTColaborador.getValueAt(linha, 1));
             jCPonto.setSelectedItem((String) jTColaborador.getValueAt(linha, 2));
             jCAtivo.setSelectedItem((String) jTColaborador.getValueAt(linha, 3));
-            jCCasa.setSelectedItem((String) jTColaborador.getValueAt(linha, 4));
-            jCApartamento.setSelectedItem((String) jTColaborador.getValueAt(linha, 5));
-            jTNome.setText((String) jTColaborador.getValueAt(linha, 6));
-            jTSobrenome.setText((String) jTColaborador.getValueAt(linha, 7));
-            jTCpf.setText((String) jTColaborador.getValueAt(linha, 8));
-            jTSalario.setText((String) jTColaborador.getValueAt(linha, 9));
-            jTCep.setText((String) jTColaborador.getValueAt(linha, 10));
-            jTBairro.setText((String) jTColaborador.getValueAt(linha, 11));
-            jTRua.setText((String) jTColaborador.getValueAt(linha, 12));
-            jTNumero.setText((String) jTColaborador.getValueAt(linha, 13));
+            jcbMoradia.setSelectedItem((String) jTColaborador.getValueAt(linha, 4));
+            jTNome.setText((String) jTColaborador.getValueAt(linha, 5));
+            jTSobrenome.setText((String) jTColaborador.getValueAt(linha, 6));
+            jTCpf.setText((String) jTColaborador.getValueAt(linha, 7));
+            jTSalario.setText((String) jTColaborador.getValueAt(linha, 8));
+            jTCep.setText((String) jTColaborador.getValueAt(linha, 9));
+            jTBairro.setText((String) jTColaborador.getValueAt(linha, 10));
+            jTRua.setText((String) jTColaborador.getValueAt(linha, 11));
+            jTNumero.setText((String) jTColaborador.getValueAt(linha, 12));
         }else{
             JOptionPane.showMessageDialog(
                 null,
@@ -639,21 +657,8 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
     public void confirmarAlteracao(){
         try{
             ColaboradorVO cVO = new ColaboradorVO();
-            String opcaoSelecionadaClt = (String) jCClt.getSelectedItem();
-            String opcaoSelecionadaPonto = (String) jCPonto.getSelectedItem();
-            String opcaoSelecionadaAtivo = (String) jCAtivo.getSelectedItem();
-            String opcaoSelecionadaCasa = (String) jCCasa.getSelectedItem();
-            String opcaoSelecionadaAp = (String) jCApartamento.getSelectedItem();
-            
-            boolean clt = "Sim".equals(opcaoSelecionadaClt);
-            boolean ponto = "Sim".equals(opcaoSelecionadaPonto);
-            boolean ativo = "Sim".equals(opcaoSelecionadaAtivo);
-            boolean casa = "Sim".equals(opcaoSelecionadaCasa);
-            boolean ap = "Sim".equals(opcaoSelecionadaAp);
-            
-            
-            
-            
+
+         
             if(jTCodigo.getText().isEmpty() ||
                     jTNome.getText().isEmpty() ||
                     jTSobrenome.getText().isEmpty() ||
@@ -671,15 +676,14 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
                     JOptionPane.ERROR_MESSAGE);
             } else{
                 cVO.setIdColaborador(Long.parseLong(jTCodigo.getText()));
-                cVO.setClt(clt);
-                cVO.setPonto(ponto);
-                cVO.setAtivo(ativo);
-                cVO.setCasa(casa);
-                cVO.setApartamento(ap);
+                cVO.setClt((String) jCClt.getSelectedItem());
+                cVO.setPonto((String) jCPonto.getSelectedItem());
+                cVO.setAtivo((String )jCAtivo.getSelectedItem());
+                cVO.setTipoMoradia((String) jcbMoradia.getSelectedItem());
                 cVO.setPrimeiroNome(jTNome.getText());
                 cVO.setSobrenome(jTSobrenome.getText());
                 cVO.setCpf(jTCpf.getText());
-                cVO.setSalario(Double.parseDouble(jTSalario.getText()));
+                cVO.setSalario(jTSalario.getText());
                 cVO.setCep(jTCep.getText());
                 cVO.setBairro(jTBairro.getText());
                 cVO.setRua(jTRua.getText());
@@ -764,9 +768,7 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBDeletar;
     private javax.swing.JButton jBLimpar;
     private javax.swing.JButton jButtonPreencher;
-    private javax.swing.JComboBox<String> jCApartamento;
     private javax.swing.JComboBox<String> jCAtivo;
-    private javax.swing.JComboBox<String> jCCasa;
     private javax.swing.JComboBox<String> jCClt;
     private javax.swing.JComboBox<String> jCPesquisa;
     private javax.swing.JComboBox<String> jCPonto;
@@ -782,7 +784,6 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
@@ -791,15 +792,16 @@ public class GUIManutencaoColaborador extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTBairro;
-    private javax.swing.JTextField jTCep;
+    private javax.swing.JFormattedTextField jTCep;
     private javax.swing.JTextField jTCodigo;
     private javax.swing.JTable jTColaborador;
-    private javax.swing.JTextField jTCpf;
+    private javax.swing.JFormattedTextField jTCpf;
     private javax.swing.JTextField jTNome;
     private javax.swing.JTextField jTNumero;
     private javax.swing.JTextField jTPesquisa;
     private javax.swing.JTextField jTRua;
-    private javax.swing.JTextField jTSalario;
+    private javax.swing.JFormattedTextField jTSalario;
     private javax.swing.JTextField jTSobrenome;
+    private javax.swing.JComboBox<String> jcbMoradia;
     // End of variables declaration//GEN-END:variables
 }
