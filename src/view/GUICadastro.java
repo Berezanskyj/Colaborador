@@ -5,16 +5,10 @@
  */
 package view;
 
-import dao.LoginDAO;
-import java.awt.event.KeyEvent;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.HashSet;
+
 import javax.swing.JOptionPane;
 import modelo.LoginVO;
-import modelo.ProdutoVO;
 import servicos.LoginServicos;
-import servicos.ProdutoServicos;
 
 /**
  *

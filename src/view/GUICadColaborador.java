@@ -5,16 +5,10 @@
  */
 package view;
 
-import java.awt.event.ActionEvent;
-import java.util.HashSet;
-import java.util.Set;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.ColaboradorVO;
 import servicos.ColaboradorServicos;
-import javax.swing.ButtonGroup;
+
 /**
  *
  * @author cralves
