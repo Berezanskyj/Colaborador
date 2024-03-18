@@ -1,0 +1,18 @@
+create database dev2n231;
+use dev2n231;
+
+create table login(
+idlogin int auto_increment not null primary key,
+login varchar(40) not null,
+senha varchar(20) not null
+);
+
+insert into login values(null, 'admin', '123456');
+
+
+create table produto(
+   idproduto int auto_increment not null primary key,
+   nome varchar(50) not null,
+   valorCusto double(10,2) not null,  
+   quantidade int not null
+); 
