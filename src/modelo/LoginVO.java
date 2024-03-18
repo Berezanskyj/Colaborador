@@ -8,8 +8,9 @@ package modelo;
 public class LoginVO {
     //Atributos
     private int idLogin;
-    private String login, senha;
-    
+    private String login, senha, senhaNovamente;
+
+        
     //Métodos Acessores
 
     public int getIdLogin() {
@@ -34,6 +35,14 @@ public class LoginVO {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+    
+    public String getSenhaNovamente() {
+        return senhaNovamente;
+    }
+
+    public void setSenhaNovamente(String senhaNovamente) {
+        this.senhaNovamente = senhaNovamente;
     }
     
     

@@ -5,10 +5,7 @@
 package view;
 
 import java.awt.event.KeyEvent;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.ColaboradorVO;

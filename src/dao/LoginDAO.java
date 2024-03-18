@@ -43,4 +43,26 @@ public class LoginDAO {
     }//fecha o método autenticarLogin
     
     
+    public void cadastrar(LoginVO lVO) throws SQLException {
+        con = new ConexaoBanco().getConexao();
+        
+        try{
+            String sql;
+            sql = "insert into login values (null, ?, ?, ?)";
+            
+            PreparedStatement pstm = con.prepareStatement(sql);
+            pstm.setString(1, lVO.getLogin() );
+            pstm.setString(2, lVO.getSenha() );
+            pstm.setString(3, lVO.getSenhaNovamente() );
+            
+            pstm.execute();
+            pstm.close();
+        } catch (SQLException se){
+            JOptionPane.showMessageDialog(null, se.getMessage());
+        } finally {
+            con.close();
+        }
+    }
+    
+    
 }//fecha a classe DAO
